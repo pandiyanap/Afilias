@@ -1,0 +1,32 @@
+spring:
+  #Datasource
+  datasource:
+    url: jdbc:postgresql://localhost/notification_catalog
+    username: username
+    password: password
+
+
+server:
+  port: 8084
+
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: metrics,health,info,shutdown
+    enabled-by-default: false
+  endpoint:
+    metrics:
+      enabled: true
+    health:
+      enabled: true
+    info:
+      enabled: true
+    shutdown:
+      enabled: true
+
+
+cors:
+  origins:
+    urls: http://localhost:3000
